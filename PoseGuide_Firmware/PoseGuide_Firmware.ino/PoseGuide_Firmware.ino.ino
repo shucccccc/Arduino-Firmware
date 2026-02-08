@@ -276,6 +276,8 @@ void loop() {
   Serial.print(p_slouch, 4);    Serial.print(",");
   Serial.print(p_transient, 4); Serial.print(",");
   Serial.println(buzz_command);
+  Serial.print(gate.getPostureHistory(), 4);      Serial.print(","); 
+  Serial.println(gate.getAdaptiveThreshold(), 4);                    
 }
 
 // ======================== VIBRATION PATTERNS ========================
