@@ -313,7 +313,11 @@ class PoseGuideServerCallbacks : public BLEServerCallbacks {
   void onDisconnect(BLEServer *server) override {
     (void)server;
     bleDeviceConnected = false;
+    delay(500);
+    BLEDevice::startAdvertising();
+    Serial.println(F("Device disconnected. Restarting BLE advertising..."));
   }
+
 };
 
 void sendCalibrationPacket(float angleDeg, float gyroXDps) {
